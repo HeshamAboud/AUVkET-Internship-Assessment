@@ -1,17 +1,14 @@
-import 'dart:async';
 
-import 'package:e_commerce_app/simple_e_commerc.dart';
+import 'package:e_commerce_app/feture/product_screen/ui/screen/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../../../../core/components/components.dart';
 import '../../../../core/generic_cubit/generic_cubit.dart';
-import '../../../../core/network/models/api_response_model.dart';
+import '../../../../core/helpers/cache_helper.dart';
 import '../../../../core/network_exceptions.dart';
-
-import '../../../core/components/components.dart';
-import '../../../core/helpers/cache_helper.dart';
-import '../../login_response.dart';
-import '../../repo/login_repo.dart';
+import '../../../home_screen/ui/screen/home_screen.dart';
+import '../../logic/login_response.dart';
+import '../../logic/login_repo.dart';
 
 class CheckLoginBlocListenerWidget extends StatelessWidget {
   const CheckLoginBlocListenerWidget(

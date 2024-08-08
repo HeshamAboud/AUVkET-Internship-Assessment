@@ -1,9 +1,9 @@
+import 'package:e_commerce_app/core/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/di/dependency_injection.dart';
-import '../../../core/components/components.dart';
-import '../../repo/login_repo.dart';
+import '../../logic/login_repo.dart';
 import '../widgets/login_and_register.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 10.h,),
                     SizedBox(
                       height: 68.h,
                       child: TextField(

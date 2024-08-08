@@ -1,4 +1,10 @@
+import 'package:e_commerce_app/feture/cart_screen/widgets/product_image.dart';
+import 'package:e_commerce_app/feture/home_screen/logic/model/home_response_model.dart';
+import 'package:e_commerce_app/feture/product_screen/ui/screen/product_screen.dart';
+import 'package:e_commerce_app/feture/product_screen/ui/widget/product_title.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BackWidget extends StatelessWidget {
@@ -18,6 +24,153 @@ final String text;
     );
   }
 }
+class Category {
+  final String title;
+  final List<String> selections;
+
+  Category({required this.title, required this.selections});
+}
+Category mensCategory = Category(title: 'mensCategory', selections: [
+  'Shirts',
+  'Jeans',
+  'Shorts',
+]);
+Category womensCategory = Category(title: 'womensCategory', selections: [
+  'Shirts',
+  'Jeans',
+]);
+Category petsCategory = Category(title: 'petsCategory', selections: [
+  'Toys',
+  'Treats',
+]);
+
+void pushScreen({required BuildContext context, required Widget screen}) {
+  ThemeData themeData = Theme.of(context);
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => Theme(data: themeData, child: screen),
+    ),
+  );
+}
+
+
+class ProductRow extends StatelessWidget {
+  const ProductRow(
+      {required this.products, required this.productType, Key? key})
+      : super(key: key);
+  final String productType;
+  final List<Product> products;
+
+  @override
+  Widget build(BuildContext context) {
+    List<ProductTile> productTiles =
+    products.map((p) => ProductTile(product: p)).toList();
+
+    return productTiles.isEmpty
+        ? const SizedBox.shrink()
+        : Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 18.0,
+          ),
+          child: Text(
+            productType,
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        SizedBox(
+          height: 205,
+          child: ListView.separated(
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            itemCount: productTiles.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (_, index) => productTiles[index],
+            separatorBuilder: (_, index) => const SizedBox(
+              width: 24,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
+// class SearchBar extends StatefulWidget {
+//   const SearchBar({required this.onChanged, Key? key}) : super(key: key);
+//
+//   final Function(String) onChanged;
+//
+//   @override
+//   State<SearchBar> createState() => _SearchBarState();
+// }
+//
+// class _SearchBarState extends State<SearchBar> {
+//   late TextEditingController _textEditingController;
+//
+//   @override
+//   void initState() {
+//     super.initState();
+//     _textEditingController = TextEditingController();
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         color: Theme.of(context).primaryColorLight,
+//         borderRadius: BorderRadius.circular(18),
+//       ),
+//       child: TextField(
+//         onChanged: widget.onChanged,
+//         controller: _textEditingController,
+//         textAlignVertical: TextAlignVertical.center,
+//         textInputAction: TextInputAction.search,
+//         decoration: InputDecoration(
+//           border: InputBorder.none,
+//           isDense: true,
+//           contentPadding:
+//           kIsWeb ? const EdgeInsets.only(top: 10) : EdgeInsets.zero,
+//           prefixIconConstraints: const BoxConstraints(
+//             minHeight: 36,
+//             minWidth: 36,
+//           ),
+//           prefixIcon: const Icon(
+//             Icons.search,
+//           ),
+//           hintText: 'Search for a product',
+//           suffixIconConstraints: const BoxConstraints(
+//             minHeight: 36,
+//             minWidth: 36,
+//           ),
+//           suffixIcon: IconButton(
+//             constraints: const BoxConstraints(
+//               minHeight: 36,
+//               minWidth: 36,
+//             ),
+//             splashRadius: 24,
+//             icon: const Icon(
+//               Icons.clear,
+//             ),
+//             onPressed: () {
+//               _textEditingController.clear();
+//               widget.onChanged(_textEditingController.text);
+//               FocusScope.of(context).unfocus();
+//             },
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class CustomFormFieldColumn1 extends StatelessWidget {
 
   final TextEditingController controller;

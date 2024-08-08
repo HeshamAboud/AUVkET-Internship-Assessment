@@ -18,6 +18,9 @@ abstract class AppWebServices {
 
   @POST(register1)
   Future<dynamic> register(@Body()  Map<String,dynamic> registerBody);
+
+  @POST(home)
+  Future<dynamic> getHomeData();
   //
   // @POST(clientForgetPassword)
   // Future<dynamic> forgetPassword(

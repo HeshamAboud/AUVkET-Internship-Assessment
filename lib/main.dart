@@ -1,5 +1,6 @@
-import 'package:e_commerce_app/login/ui/screens/login_screen.dart';
-import 'package:e_commerce_app/simple_e_commerc.dart';
+import 'package:e_commerce_app/feture/home_screen/ui/screen/home_screen.dart';
+import 'package:e_commerce_app/feture/login/ui/screens/login_screen.dart';
+import 'package:e_commerce_app/feture/product_screen/ui/screen/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,8 +35,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData.light(),
-            //home: CacheHelper.getdata(key: "token") !=null ?SimpleEcommerce():  LoginScreen(),
-            home:   LoginScreen(),
+            home: CacheHelper.getdata(key: "token") !=null ?SimpleEcommerce():  LoginScreen(),
+            // home:   LoginScreen(),
           );
         }
     );

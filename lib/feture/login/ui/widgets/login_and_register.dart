@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/components/components.dart';
 import '../../../../core/di/dependency_injection.dart';
-import '../../../core/models/login_request_body.dart';
 import '../../../register/ui/screen/Register.dart';
-import '../../repo/login_repo.dart';
+import '../../logic/login_repo.dart';
 import 'check_login.dart';
 
 class LoginAndRegister extends StatefulWidget {

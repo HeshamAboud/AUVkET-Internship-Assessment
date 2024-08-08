@@ -1,15 +1,16 @@
 import 'package:e_commerce_app/core/di/dependency_injection.dart';
-import 'package:e_commerce_app/register/data/model/register_response.dart';
+import 'package:e_commerce_app/feture/register/data/model/register_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/components/components.dart';
+import '../../../../core/generic_cubit/generic_cubit.dart';
+import '../../../../core/helpers/cache_helper.dart';
+import '../../../../core/network_exceptions.dart';
+import '../../../product_screen/ui/screen/product_screen.dart';
 
-import '../../../core/components/components.dart';
-import '../../../core/generic_cubit/generic_cubit.dart';
-import '../../../core/helpers/cache_helper.dart';
-import '../../../core/network_exceptions.dart';
-import '../../../simple_e_commerc.dart';
-import '../../data/repo/register_repo.dart';
+import '../../../home_screen/ui/screen/home_screen.dart';
+import '../../data/logic/register_repo.dart';
 import '../widgets/screen_prograss.dart';
 
 class RegisterScreen extends StatefulWidget {

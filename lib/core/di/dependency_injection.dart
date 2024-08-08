@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:e_commerce_app/register/data/repo/register_repo.dart';
 import 'package:get_it/get_it.dart';
 
-
-import '../../login/repo/login_repo.dart';
+import '../../feture/home_screen/logic/logic/home_repo.dart';
+import '../../feture/login/logic/login_repo.dart';
+import '../../feture/register/data/logic/register_repo.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/web_services.dart';
 
@@ -18,6 +18,7 @@ Future<void> setupGetIt() async {
 //  login
   getIt.registerFactory<LoginRepository>(() => LoginRepository(getIt()));
   getIt.registerFactory<RegisterRepository>(() => RegisterRepository(getIt()));
+  getIt.registerFactory<HomeRepository>(() => HomeRepository(getIt()));
   // forget password
 
 }

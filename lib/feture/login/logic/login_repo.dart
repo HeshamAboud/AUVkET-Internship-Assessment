@@ -3,8 +3,7 @@ import 'package:dio/dio.dart';
 import '../../../../core/generic_cubit/generic_cubit.dart';
 import '../../../../core/network/web_services.dart';
 import '../../../core/network_exceptions.dart';
-import '../../core/models/login_request_body.dart';
-import '../login_response.dart';
+import 'login_response.dart';
 
 class LoginRepository {
   final AppWebServices webServices;

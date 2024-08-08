@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:e_commerce_app/register/data/model/register_response.dart';
 
 import '../../../../core/generic_cubit/generic_cubit.dart';
 import '../../../../core/network/web_services.dart';
-import '../../../core/network_exceptions.dart';
+import '../../../../core/network_exceptions.dart';
+import '../model/register_response.dart';
 
 
 
