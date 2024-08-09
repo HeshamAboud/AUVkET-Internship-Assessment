@@ -28,9 +28,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController firstNameController = TextEditingController();
 
   TextEditingController lastNameController = TextEditingController();
-  List<String> listItem = ["Seller", "Buyer", "Both"];
-  String selectedValue = "Seller";
-  bool click = false;
+
   RegisterRepository registerRepository = getIt<RegisterRepository>();
 
   @override

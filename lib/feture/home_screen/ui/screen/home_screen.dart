@@ -29,9 +29,6 @@ class _SimpleEcommerceState extends State<SimpleEcommerce> {
   void initState() {
     // TODO: implement initState
     homeRepository.getHomeData(
-    //     token: {
-    //   "token":  CacheHelper.getdata(key: "token")
-    // }
     );
     super.initState();
   }

@@ -177,49 +177,53 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
           ),
           Expanded(
-            child: Padding(
-              padding:  EdgeInsets.all(16.sp),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.name!,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                   SizedBox(
-                    height: 4.h,
-                  ),
-                  Text(
-                    '\$${product.cost}',
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                   SizedBox(height: 12.h),
-                  Text(
-                    product.productType!,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium!
-                        .copyWith(height: 1.5),
-                  ),
-                   SizedBox(
-                    height: 18.h,
-                  ),
-                  const Spacer(),
-                  Center(
-                    child: CallToActionButton(
-                      onPressed: () => cart.add(
-                        OrderItem(
-                          product: product,
-                          selectedSize: selectedSize,
+            child: Row(
+              children: [
+                Padding(
+                  padding:  EdgeInsets.all(16.sp),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.name!,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                       SizedBox(
+                        height: 4.h,
+                      ),
+                      Text(
+                        '\$${product.cost}',
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
-                      labelText: 'Add to Cart',
-                    ),
-                  )
-                ],
-              ),
+                       SizedBox(height: 12.h),
+                      Text(
+                        product.productType!,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(height: 1.5),
+                      ),
+                       SizedBox(
+                        height: 18.h,
+                      ),
+                      const Spacer(),
+                      Center(
+                        child: CallToActionButton(
+                          onPressed: () => cart.add(
+                            OrderItem(
+                              product: product,
+                              selectedSize: selectedSize,
+                            ),
+                          ),
+                          labelText: 'Add to Cart',
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
